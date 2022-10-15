@@ -1,0 +1,75 @@
+/* Banner Css */
+.Banner{
+    display: flex;
+    justify-content: center;
+align-items: center;
+/* height: 100%; */
+}
+.Banner-img{
+    background-image: url("../Images/4.jpeg");
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+.Banner-Overlay{
+    height: 600px;
+    margin: 0px;
+    background-color: rgba(128, 128, 128, 0.204);
+}
+.Banner-content{
+    display: flex;
+    height: 100%;
+    color: white;
+    padding: 150px 0px 0px 200px;
+    /* margin: 150px 0px 0px 200px ; */
+}
+.Boxarea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: -110px 80px ;
+    /* width: 1100px; */
+}
+.Content_Boxarea{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 8px 30px #ffffff96;
+    width: 50%;
+    padding: 30px 35px;
+    margin: 20px;
+}
+.a_Boxarea{
+    display: flex;
+    justify-content:end;
+}
+.h3_Boxarea{
+    margin-top: -5px;
+}
+.n{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    /* flex-direction: row; */
+}
+.card{
+  margin-top: 130px ;
+  width: 25%;
+  height: 200px;
+}
+.card-body{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-title{
+    color: bisque;
+}
