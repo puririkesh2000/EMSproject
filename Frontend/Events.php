@@ -1,6 +1,7 @@
 <div class="n">
 
     <?php
+    session_start();
     require 'dbcon.php';
     $sql="SELECT * FROM `eventinfo`";
     $query_run=mysqli_query($con,$sql);
@@ -22,12 +23,16 @@
         
         echo'
         <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">'.$event['name'].'</h5>
-                <p class="card-text">'.$event['location'].'</p>
-                <a href="#" class="btn btn-primary">'.$event['description'].'</a>
-                </div>
-            </div>';
+       
+        <div class="card-body">
+        
+            <h5 class="card-title">' .$event['eid'].'</h5>
+            <a href="Eventdetail.php?id='.$event['eid'].'" class="" >
+            <p class="card-text">'.$event['location'].'</p>
+            <a href="#" class="btn btn-primary">'.$event['description'].'</a>
+            </div></a>
+        </div>';
+        
         }
         }
     // }
