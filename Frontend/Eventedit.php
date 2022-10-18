@@ -31,6 +31,7 @@ $sql="SELECT * FROM `eventinfo` where eid=$id";
             <label for="orgname">Event Organizers</label>
             <input type="text" name='orgname' id='orgname' value="<?=$event["organizers"];?>">
             <input type="submit" value="Update" name="update" id="">
+
         </div>
     </form>
 
