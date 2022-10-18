@@ -4,8 +4,10 @@ include 'Navbar.php';
 <link rel="stylesheet" type="text/css" href="Registerevent.css">
 </link>
 <div class='event'>
-    <form action="dbevent.php" method='POST'>
+    <form action="dbevent.php" method='POST' enctype='multipart/form-data'>
         <div class='Registerevent'>
+            <label for="image">Image</label>
+            <input type="file" name='image' id='image'>
             <label for="name">Event Name</label>
             <input type="text" name='name' id='name'>
             <label for="loc">Location</label>

@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="Events.css">
+</link>
+
 <div class="n">
 
     <?php
@@ -20,22 +23,31 @@
             
         //   echo "Key=" . $x . ", Value=" . $x_value;
         //   echo "<br>";
-        
-        echo'
-        <div class="card">
-       
+        ?>
+    <div class="card">
+
         <div class="card-body">
-        
-            <h5 class="card-title">' .$event['eid'].'</h5>
-            <a href="Eventdetail.php?id='.$event['eid'].'" class="" >
-            <p class="card-text">'.$event['location'].'</p>
-            <a href="#" class="btn btn-primary">'.$event['description'].'</a>
-            </div></a>
-        </div>';
-        
-        }
-        }
-    // }
-    
-?>
+            <div class="card-action">
+
+                <a href="Eventedit.php?id=<?=$event['eid']?>"><button>E</button>
+                </a>
+                <form action="dbevent.php" method="POST">
+                    <button type="submit" value="<?=$event['eid']?>" name="delete">D</button>
+                </form>
+            </div>
+            <img src="<?=$event['logo']?>" alt="img" height="50" width="50">
+            <a href=" Eventdetail.php?id=<?=$event['eid']?>" class="">
+                <p class="card-text">
+                    <?=$event['location']?></p>
+                <a href="#" class="btn btn-primary">
+                    <?=$event['description']?></a>
+        </div></a>
+    </div>
+    <?php
+    }
+
+    }
+
+    ?>
+</div>
 </div>

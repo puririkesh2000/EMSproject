@@ -1,16 +1,76 @@
 <?php
 require 'dbcon.php';
 
-if(isset ($_POST['save'])){
+if(isset($_POST['delete'])){
+    $eid=$_POST['delete'];
+    $sql="DELETE FROM eventinfo WHERE eid=$eid";
+    $query_run=mysqli_query($con,$sql);
+    if($query_run){
+        header("Location:Home.php");
+    }
+    else{
+        header("Location:Registerevent.php");
+    }
+}
+
+
+if(isset($_POST['update'])){
+    $eid=$_POST['id'];
+
+    $image=$_FILES['image'];
+
+    $filename=$image['name'];
+    $fileerror=$image['error'];
+    $filetmo=$image['tmp_name'];
+
+    $destinationfile='upload/'.$filename;
+    move_uploaded_file($filetmo,$destinationfile);
+    
     $name=$_POST['name'];
     $location=$_POST['location'];
     $date=$_POST['date'];
     $description=$_POST['description'];
     $organizer=$_POST['orgname'];
+
+    $sql="UPDATE eventinfo SET logo='$destinationfile', name='$name', location='$location',
+    date='$date',description='$description',organizers='$organizer' WHERE eid=$eid";
+    $query_run=mysqli_query($con,$sql);
+    if($query_run){
+        header("Location:Home.php");
+    }
+    else{
+        header("Location:Registerevent.php");
+    }
 }
-$sql="insert into eventinfo(name,location,date,description,organizers) values ('$name','$location','$date','$description','$organizer')";
+
+if(isset ($_POST['save'])){
+
+    $image=$_FILES['image'];
+    
+    $filename=$image['name'];
+    $fileerror=$image['error'];
+    $filetmo=$image['tmp_name'];
+
+    $destinationfile='upload/'.$filename;
+    move_uploaded_file($filetmo,$destinationfile);
+
+
+
+    
+    $name=$_POST['name'];
+    $location=$_POST['location'];
+    $date=$_POST['date'];
+    $description=$_POST['description'];
+    $organizer=$_POST['orgname'];
+
+$sql="insert into eventinfo(logo,name,location,date,description,organizers) values ('$destinationfile','$name','$location','$date','$description','$organizer')";
 $query_run=mysqli_query($con,$sql);
+
 if($query_run){
     header("Location:Home.php");
+}
+else{
+    header("Location:Home.php");
+}
 }
 ?>

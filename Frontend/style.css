@@ -49,27 +49,4 @@ align-items: center;
 .h3_Boxarea{
     margin-top: -5px;
 }
-.n{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
 
-    /* flex-direction: row; */
-}
-.card{
-  margin-top: 130px ;
-  width: 25%;
-  height: 200px;
-}
-.card-body{
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.card-title{
-    color: bisque;
-}
