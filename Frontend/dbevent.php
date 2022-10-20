@@ -1,8 +1,11 @@
 <?php
+// Importing db connection
 require 'dbcon.php';
 
+// if button having name delete is clicked
 if(isset($_POST['delete'])){
     $eid=$_POST['delete'];
+    // query
     $sql="DELETE FROM eventinfo WHERE eid=$eid";
     $query_run=mysqli_query($con,$sql);
     if($query_run){
@@ -13,16 +16,16 @@ if(isset($_POST['delete'])){
     }
 }
 
-
+// if button having name update is clicked
 if(isset($_POST['update'])){
     $eid=$_POST['id'];
-
+// Image is type of media so we use file
     $image=$_FILES['image'];
 
     $filename=$image['name'];
     $fileerror=$image['error'];
     $filetmo=$image['tmp_name'];
-
+// moving the image to certain folder
     $destinationfile='upload/'.$filename;
     move_uploaded_file($filetmo,$destinationfile);
     
