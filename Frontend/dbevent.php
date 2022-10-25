@@ -32,7 +32,7 @@ if(isset($_POST['update'])){
     $name=$_POST['name'];
     $location=$_POST['location'];
     $date=$_POST['date'];
-    $description=$_POST['description'];
+    $description=mysqli_real_escape_string($con,$_POST['description']);
     $organizer=$_POST['orgname'];
 
     $sql="UPDATE eventinfo SET logo='$destinationfile', name='$name', location='$location',
@@ -63,7 +63,7 @@ if(isset ($_POST['save'])){
     $name=$_POST['name'];
     $location=$_POST['location'];
     $date=$_POST['date'];
-    $description=$_POST['description'];
+    $description= mysqli_real_escape_string($con,$_POST['description']);
     $organizer=$_POST['orgname'];
 
 $sql="insert into eventinfo(logo,name,location,date,description,organizers) values ('$destinationfile','$name','$location','$date','$description','$organizer')";

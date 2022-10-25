@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.Eventdetail-banner{
+    background-color: rgb(182, 182, 182);
+    height: 250px;
+    width: 100%;
+}
+.Eventdetail-container{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    margin: -80px 400px 0px;
+    background-color: white;
+}
+.Eventdetail-info{
+    display: flex;
+}
+.Eventdetail-descp{
+    width: 72%;
+}
+.Eventdetail-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 28%;
+    border: 1px solid black;
+}

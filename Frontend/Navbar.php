@@ -1,44 +1,86 @@
 <html>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Navbar.css">
+    </link>
+</head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="" alt="logo">
+            <ul class="navbar-menu">
+                <li class="navbar-item">HOME</li>
+                <li class="navbar-item">ABOUT</li>
+                <li class="navbar-item">EVENTS</li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <div class="navbar-button">
+                <button class="navbar-login" onclick="openpopup()">LOGIN</button>
+
+                <button class="navbar-signup" onclick="openpopup()"> SIGNUP</button>
+            </div>
         </div>
     </nav>
+    <!-- Login Popup -->
+    <form action="">
+        <div class="navbar-popup" id="popup">
+            <div class="credential">
+                <h4>LOGIN TO YOUR ACCOUNT</h4>
+                <span onclick="closepopup()"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <label for="email">Name </label>
+            <input type="text" id="email">
+            <label for="password">Password </label>
+            <input type="text" name="" id="password">
+            <div class="popup-button">
+                <button>Sign In</button>
+                <span>Don't have an account?</span>
+                <button>Sign Up</button>
+            </div>
+        </div>
+    </form>
+    <script>
+    let popup = document.getElementById("popup");
+
+    function openpopup() {
+        popup.classList.add("open-popup");
+    }
+
+    function closepopup() {
+        popup.classList.remove("open-popup");
+    }
+    </script>
+
+    <!-- Signup Popup -->
+    <form action="">
+        <div class="navbar-popup" id="popup">
+            <div class="credential">
+                <h4>SIGNUP TO YOUR ACCOUNT</h4>
+                <span onclick="closepopup()"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <label for="email">Name </label>
+            <input type="text" id="email">
+            <label for="password">Password </label>
+            <input type="text" name="" id="password">
+            <div class="popup-button">
+                <button>Sign In</button>
+                <span>Don't have an account?</span>
+                <button>Sign Up</button>
+            </div>
+        </div>
+    </form>
+    <script>
+    let popup = document.getElementById("popup");
+
+    function openpopup() {
+        popup.classList.add("open-popup");
+    }
+
+    function closepopup() {
+        popup.classList.remove("open-popup");
+    }
+    </script>
 
 </html>
