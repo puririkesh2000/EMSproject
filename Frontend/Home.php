@@ -10,10 +10,19 @@
 </link>
 
 <body>
+
     <!-- Navbar -->
     <?php
 include 'navbar.php';
     ?>
+    <?php
+session_start();
+
+if(isset($_SESSION['userName'])) {
+echo $_SESSION['userName'];
+echo $_SESSION['last_login_timestamp'];
+}
+?>
     <!--Banner  -->
     <div class="Banner">
         <div class="Banner-img">
@@ -42,7 +51,10 @@ include 'navbar.php';
         </div>
     </div>
     <?php
+    
+
     include 'events.php';
+    // session_destroy();
     // include 'Registerevent.php';
     ?>
 

@@ -41,11 +41,18 @@ $sql="SELECT * FROM `eventinfo` where eid=$id";
         </p>
     </div>
     <div class="Eventdetail-box">
-        <h3>Event Detail</h3>
-        <li>TIme</li>
-        <li>Capacity</li>
-        <li>Ticket Price</li>
+        <div class="Eventdetail-detail">
+            <h3>Event Detail</h3>
+            <li>TIme</li>
+            <li>Capacity</li>
+            <li>Ticket Price</li>
+        </div>
+        <div class="Eventdetail-loginbox">
+            Want to register your own event?
+            <a href="Registerevent.php"><button>Register here</button></a>
+        </div>
     </div>
+
 </div>
 
 <?php

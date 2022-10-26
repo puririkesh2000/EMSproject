@@ -1,8 +1,16 @@
 <?php
 include 'Navbar.php';
+session_start();
+if(isset( $_SESSION['userName'])){
+    echo $_SESSION['userName'];
+if((time() - $_SESSION['last_login_timestamp'])>60){
+    session_destroy();
+}
+
 ?>
 <link rel="stylesheet" type="text/css" href="Registerevent.css">
 </link>
+
 <div class='event'>
     <form action="dbevent.php" method='POST' enctype='multipart/form-data'>
         <div class='Registerevent'>
@@ -23,4 +31,11 @@ include 'Navbar.php';
     </form>
     hi
     highlight_file
+    <?php
+    }
+    else{
+        header("location:Footer.php");
+    // session_destroy();
+}
+?>
 </div>

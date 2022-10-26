@@ -1,3 +1,10 @@
+<?php
+   if(!isset($_SESSION)) 
+   { 
+       session_start(); 
+    } 
+    ?>
+
 <html>
 
 <head>
@@ -12,7 +19,6 @@
 <h5 class="container-heading">FEATURED EVENTS</h5>
 <div class="event-container">
     <?php
-    session_start();
     require 'dbcon.php';
     $sql="SELECT * FROM `eventinfo`";
     $query_run=mysqli_query($con,$sql);
@@ -24,6 +30,15 @@
         ?>
 
     <div class="card">
+        <?php
+        if(isset($_SESSION['userName'])) {
+        $s="SELECT usertype FROM `usertable` WHERE email='".$_SESSION['userName']."'";
+        $query=mysqli_query($con,$s);
+        if(mysqli_num_rows($query) > 0){
+            while($data = mysqli_fetch_assoc($query)){
+                
+        if($data['usertype']=='admin'){
+        ?>
         <div class="card-action">
 
             <a href="Eventedit.php?id=<?=$event['eid']?>"><button class='card-button'>
@@ -34,6 +49,12 @@
                         class="fa-solid fa-trash"></i></button>
             </form>
         </div>
+        <?php
+        }
+        }
+    }}
+        ?>
+
 
 
         <div class="card-body">
@@ -58,6 +79,7 @@
     }
 
     }
+    // session_destroy();
 
     ?>
 </div>

@@ -26,6 +26,23 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    /* border: 1px solid black; */
     width: 28%;
+}
+.Eventdetail-detail{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+
+}
+.Eventdetail-loginbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     border: 1px solid black;
 }

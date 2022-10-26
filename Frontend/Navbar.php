@@ -19,23 +19,23 @@
             <div class="navbar-button">
                 <button class="navbar-login" onclick="openpopup()">LOGIN</button>
 
-                <button class="navbar-signup" onclick="openpopup()"> SIGNUP</button>
+                <button class="navbar-signup" onclick="sopenpopup()"> SIGNUP</button>
             </div>
         </div>
     </nav>
     <!-- Login Popup -->
-    <form action="">
+    <form action="dbuser.php" method="POST">
         <div class="navbar-popup" id="popup">
-            <div class="credential">
+            <div class="header">
                 <h4>LOGIN TO YOUR ACCOUNT</h4>
                 <span onclick="closepopup()"><i class="fa-solid fa-xmark"></i></span>
             </div>
-            <label for="email">Name </label>
-            <input type="text" id="email">
+            <label for="email">Email </label>
+            <input type="text" name="email" id="email">
             <label for="password">Password </label>
-            <input type="text" name="" id="password">
+            <input type="text" name="password" id="password">
             <div class="popup-button">
-                <button>Sign In</button>
+                <button name="signin">Sign In</button>
                 <span>Don't have an account?</span>
                 <button>Sign Up</button>
             </div>
@@ -54,32 +54,42 @@
     </script>
 
     <!-- Signup Popup -->
-    <form action="">
-        <div class="navbar-popup" id="popup">
-            <div class="credential">
+    <form action="dbuser.php" method="POST">
+        <div class="navbar-popup" id="spopup">
+            <div class="header">
                 <h4>SIGNUP TO YOUR ACCOUNT</h4>
-                <span onclick="closepopup()"><i class="fa-solid fa-xmark"></i></span>
+                <span onclick="sclosepopup()"><i class="fa-solid fa-xmark"></i></span>
             </div>
-            <label for="email">Name </label>
-            <input type="text" id="email">
-            <label for="password">Password </label>
-            <input type="text" name="" id="password">
+            <div class="name">
+                <label for="fname">FirstName </label>
+                <input type="text" name="fname" id="fname">
+                <label for="lname">LastName </label>
+                <input type="text" name="lname" id="lname">
+            </div>
+            <label for="email">Email </label>
+            <input type="text" name="email" id="email">
+            <div class="password">
+                <label for="pass">Password </label>
+                <input type="text" name="password" id="pass">
+                <label for="cpassword">ConfirmPassword </label>
+                <input type="text" name="" id="cpassword">
+            </div>
+            <label for="phone">Phone </label>
+            <input type="number" name="phone" id=" phone">
             <div class="popup-button">
-                <button>Sign In</button>
-                <span>Don't have an account?</span>
-                <button>Sign Up</button>
+                <button name="signup">Sign Up</button>
             </div>
         </div>
     </form>
     <script>
-    let popup = document.getElementById("popup");
+    let spopup = document.getElementById("spopup");
 
-    function openpopup() {
-        popup.classList.add("open-popup");
+    function sopenpopup() {
+        spopup.classList.add("open-popup");
     }
 
-    function closepopup() {
-        popup.classList.remove("open-popup");
+    function sclosepopup() {
+        spopup.classList.remove("open-popup");
     }
     </script>
 
