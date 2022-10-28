@@ -1,3 +1,9 @@
+<?php
+   if(!isset($_SESSION)) 
+   { 
+       session_start(); 
+    } 
+    ?>
 <html>
 
 <head>
@@ -34,18 +40,28 @@ $sql="SELECT * FROM `eventinfo` where eid=$id";
         </ul>
     </div>
 </div>
+
 <div class="Eventdetail-info">
     <div class="Eventdetail-descp">
         <p>
             <?=$data['description']?>
         </p>
     </div>
+    <?php
+}
+}
+$sql="SELECT * FROM `eventdetail` where eid=$id";
+    $query_run=mysqli_query($con,$sql);
+    if(mysqli_num_rows($query_run) > 0){
+        while($data = mysqli_fetch_assoc($query_run)){
+     
+?>
     <div class="Eventdetail-box">
         <div class="Eventdetail-detail">
             <h3>Event Detail</h3>
-            <li>TIme</li>
-            <li>Capacity</li>
-            <li>Ticket Price</li>
+            <li> <?=$data["time"]?></li>
+            <li><?=$data["capacity"]?></li>
+            <li><?=$data["price"]?></li>
         </div>
         <div class="Eventdetail-loginbox">
             Want to register your own event?
@@ -54,12 +70,8 @@ $sql="SELECT * FROM `eventinfo` where eid=$id";
     </div>
 
 </div>
-
 <?php
-}
-}
+        }}
 ?>
-
-</html>
 
 </html>

@@ -20,7 +20,7 @@
 <div class="event-container">
     <?php
     require 'dbcon.php';
-    $sql="SELECT * FROM `eventinfo`";
+    $sql="SELECT * FROM `eventinfo` ORDER BY `date` ASC";
     $query_run=mysqli_query($con,$sql);
     $num=mysqli_num_rows($query_run);
     if($num>0){

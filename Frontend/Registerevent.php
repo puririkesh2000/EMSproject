@@ -1,11 +1,16 @@
 <?php
 include 'Navbar.php';
-session_start();
+
+   if(!isset($_SESSION)) 
+   { 
+       session_start(); 
+    } 
+    
 if(isset( $_SESSION['userName'])){
-    echo $_SESSION['userName'];
-if((time() - $_SESSION['last_login_timestamp'])>60){
-    session_destroy();
-}
+echo $_SESSION['userName'];
+// if((time() - $_SESSION['last_login_timestamp'])>60){
+// session_destroy();
+// }
 
 ?>
 <link rel="stylesheet" type="text/css" href="Registerevent.css">
@@ -26,16 +31,28 @@ if((time() - $_SESSION['last_login_timestamp'])>60){
             <textarea name="description" id="desc" cols="30" rows="5"></textarea>
             <label for="orgname">Event Organizers</label>
             <input type="text" name='orgname' id='orgname'>
-            <input type="submit" name="save" id="">
         </div>
+        <div class="Eventinfo">
+            <h3>Event Detail</h3>
+            <label for="time">Time</label>
+            <input type="time" name="time" id="time">
+            <label for="capacity">Capacity</label>
+            <input type="text" name="capacity" id="capacity">
+            <label for="price">Ticket Price</label>
+            <input type="text" name="price" id="price">
+            <!-- <input type="submit" name="submit" value="Save"> -->
+
+        </div>
+        <input type="submit" name="save" id="">
     </form>
     hi
     highlight_file
     <?php
     }
     else{
-        header("location:Footer.php");
-    // session_destroy();
-}
+        // echo "You need to login to register";
+    include 'Footer.php';
+        // header ('Refresh: 3; url=Footer.php');
+    }
 ?>
 </div>

@@ -1,3 +1,9 @@
+<?php
+   if(!isset($_SESSION)) 
+   { 
+       session_start(); 
+    } 
+    ?>
 <html>
 
 <head>
@@ -16,7 +22,7 @@
 include 'navbar.php';
     ?>
     <?php
-session_start();
+// session_start();
 
 if(isset($_SESSION['userName'])) {
 echo $_SESSION['userName'];
@@ -39,7 +45,7 @@ echo $_SESSION['last_login_timestamp'];
     <div class="Boxarea">
         <div class="Content_Boxarea">
             <h4>EventSeeker</h4>
-            <a href="" class="a_Boxarea">Search Now</a>
+            <a href="Events.php" class="a_Boxarea">Search Now</a>
             <h3 class="h3_Boxarea">Looking For a Event?</h3>
 
         </div>

@@ -51,7 +51,7 @@
 .navbar-popup{
   display: flex;
   flex-direction:column;
-  height: 306px;
+  height: auto;
   width: 600px;
   padding: 20px;
   visibility: hidden;
@@ -61,7 +61,7 @@ color:black;
   top: 0;
   left: 50%;
   transform: translate(-50%,-50%) scale(0.1);
-  text-align: center;
+  /* text-align: center; */
   transition: transform 0.4s,top 0.4s;
 }
 .open-popup{
@@ -73,4 +73,69 @@ color:black;
   display: flex;
   flex-direction:row;
   justify-content: space-between;
+  margin-bottom: 18px;
+}
+.group{
+  display: flex ;
+  margin-bottom: 18px;
+  /* padding: 0px 10px; */
+  /* flex-direction: column; */
+}
+.group-sec{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+
+}
+.column{
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+
+  width: 50%;
+}
+.column-sec{
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
+
+  width: 50%;
+}
+
+label{
+  margin: 0px 0px 10px;
+}
+input{
+  border: 0.1px solid rgb(185, 182, 182);
+  padding: 6px 13px;
+}
+.popup-button{
+display: flex;
+justify-content: center;
+}
+.navbar-signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid  rgb(185, 182, 182);
+  border-radius: 20px;
+  background-color: transparent;
+  height: 43px;
+  width: 130px;
+  padding: 12px 25px;
+}
+.navbar-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid  rgb(185, 182, 182);
+  border-radius: 20px;
+  background-color: transparent;
+  height: 43px;
+  width: 130px;
+  padding: 12px 25px;
+}
+.fa-solid {
+  /* color: aqua; */
+  margin-left: 9px;
 }

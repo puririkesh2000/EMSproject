@@ -1,12 +1,17 @@
 <?php
 // Importing db connection
+session_start();
+
 require 'dbcon.php';
 
 // if button having name delete is clicked
 if(isset($_POST['delete'])){
     $eid=$_POST['delete'];
     // query
-    $sql="DELETE FROM eventinfo WHERE eid=$eid";
+    $sql="DELETE eventinfo,eventdetail FROM eventinfo
+    INNER JOIN eventdetail
+    ON eventinfo.eid=eventdetail.eid
+    WHERE eventinfo.eid=$eid;";
     $query_run=mysqli_query($con,$sql);
     if($query_run){
         header("Location:Home.php");
@@ -35,6 +40,16 @@ if(isset($_POST['update'])){
     $description=mysqli_real_escape_string($con,$_POST['description']);
     $organizer=$_POST['orgname'];
 
+    $time=$_POST['time'];
+    $capacity=$_POST['capacity'];
+    $price=$_POST['price'];
+
+    $s="UPDATE eventdetail SET time='$time', capacity='$capacity' ,price='$price'  WHERE eid=$eid";
+    $query=mysqli_query($con,$s);
+    if($query){
+        header("Location:Home.php");  
+    }
+    
     $sql="UPDATE eventinfo SET logo='$destinationfile', name='$name', location='$location',
     date='$date',description='$description',organizers='$organizer' WHERE eid=$eid";
     $query_run=mysqli_query($con,$sql);
@@ -61,14 +76,25 @@ if(isset ($_POST['save'])){
 
     
     $name=$_POST['name'];
+    $_SESSION['eName'] = $name;
+
     $location=$_POST['location'];
     $date=$_POST['date'];
     $description= mysqli_real_escape_string($con,$_POST['description']);
     $organizer=$_POST['orgname'];
+    $time=$_POST['time'];
+    $capacity=$_POST['capacity'];
+    $price=$_POST['price'];
 
-$sql="insert into eventinfo(logo,name,location,date,description,organizers) values ('$destinationfile','$name','$location','$date','$description','$organizer')";
+$sql="insert into eventdetail(time,capacity,price) values ('$time','$capacity','$price')";
 $query_run=mysqli_query($con,$sql);
 
+$s="insert into eventinfo(logo,name,location,date,description,organizers) values ('$destinationfile','$name','$location','$date','$description','$organizer')";
+$query=mysqli_query($con,$s);
+
+if($query){
+    header("Location:Home.php");
+}
 if($query_run){
     header("Location:Home.php");
 }
@@ -76,4 +102,5 @@ else{
     header("Location:Home.php");
 }
 }
+
 ?>
