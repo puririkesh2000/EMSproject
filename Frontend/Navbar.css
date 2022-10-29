@@ -4,7 +4,11 @@
   margin: 0;
   padding: 0;
 }
-.navbar {
+.add-shadow{
+  height:60px; 
+  box-shadow: 0px 0px 10px 9px rgba(0,0,0,0.1);
+}
+  .navbar {
     /* background-color: #27b8f6; */
     color: black;
     height: 80px;
@@ -14,7 +18,8 @@
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
-    /* top: 0; */
+    top: 0;
+    background-color: #fff;
     z-index: 999;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
   }
@@ -24,50 +29,58 @@
     justify-content: space-around;
     margin: 0px 100px;
     width: 100%;
-
-      /* padding: 0 50px 0 0; */
-  }
+    }
 .navbar-menu{
     width: 80%;
     display: flex;
     flex-direction: row;
     padding-left: 100px;
-    /* justify-content:center; */
     align-items: center;
     list-style: none;
   }
   .navbar-item{
-  margin: 0px 50px;
-    /* height: 80px; */
+      margin: 0px 50px;
+  list-style: none;
 }
 .navbar-button{
     display: flex;
     list-style: none;
   }
-  .navbar-login{
-    margin: 0px 5px;
+  /* .navbar-login{
+    margin: 0px 5px; */
     
-}
+/* } */
 .navbar-popup{
   display: flex;
   flex-direction:column;
   height: auto;
   width: 600px;
+  position: relative;
+  top: 0;
   padding: 20px;
   visibility: hidden;
   background-color:#fff ;
-color:black;
+  color:black;
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%,-50%) scale(0.1);
+  transform: translate(-50%,-50%) scale(1);
   /* text-align: center; */
   transition: transform 0.4s,top 0.4s;
 }
 .open-popup{
+  position: fixed;
   visibility: visible;
   top: 50%;
+
   transform: translate(-50%,-50%) scale(1);
+}
+.username{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 205px;
+  margin-right: 15px;
 }
 .header{
   display: flex;
@@ -97,7 +110,7 @@ color:black;
 .column-sec{
   display: flex;
   flex-direction: column;
-  padding: 0px 10px;
+  padding-left:  10px;
 
   width: 50%;
 }
@@ -111,7 +124,7 @@ input{
 }
 .popup-button{
 display: flex;
-justify-content: center;
+/* justify-content: center; */
 }
 .navbar-signup{
   display: flex;
@@ -123,8 +136,10 @@ justify-content: center;
   height: 43px;
   width: 130px;
   padding: 12px 25px;
+  margin: 0px 5px; 
+
 }
-.navbar-login{
+.navbar-log{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,10 +147,31 @@ justify-content: center;
   border-radius: 20px;
   background-color: transparent;
   height: 43px;
+  margin: 0px 5px; 
+
   width: 130px;
   padding: 12px 25px;
+}
+.button-signup{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: -43px;
 }
 .fa-solid {
   /* color: aqua; */
   margin-left: 9px;
 }
+#icon1{
+  position: absolute;
+  top:92;
+  left: 255;
+}
+#icon2{
+  position: absolute;
+  top:92;
+  right:25;
+}
+#icon3{  position: absolute;
+  top:168;
+  right:25;}
