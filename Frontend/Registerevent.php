@@ -6,14 +6,15 @@ include 'Navbar.php';
        session_start(); 
     } 
     
+    // require 'Events.php';
 if(isset( $_SESSION['userName'])){
 echo $_SESSION['userName'];
 // if((time() - $_SESSION['last_login_timestamp'])>60){
 // session_destroy();
 // }
-
 ?>
 <link rel="stylesheet" type="text/css" href="Registerevent.css">
+
 </link>
 
 <div class='event'>
@@ -22,20 +23,20 @@ echo $_SESSION['userName'];
             <label for="image">Image</label>
             <input type="file" name='image' id='image'>
             <label for="name">Event Name</label>
-            <input type="text" name='name' id='name'>
+            <input type="text" name='name' id='name' required>
             <label for="loc">Location</label>
-            <input type="text" name='location' id='loc'>
+            <input type="text" name='location' id='loc' required>
             <label for="date">Date</label>
-            <input type="date" name='date' id='date'>
+            <input type="date" name='date' id='date' required>
             <label for="desc">Description</label>
-            <textarea name="description" id="desc" cols="30" rows="5"></textarea>
+            <textarea name="description" id="desc" cols="30" rows="5" required></textarea>
             <label for="orgname">Event Organizers</label>
-            <input type="text" name='orgname' id='orgname'>
+            <input type="text" name='orgname' id='orgname' required>
         </div>
         <div class="Eventinfo">
             <h3>Event Detail</h3>
             <label for="time">Time</label>
-            <input type="time" name="time" id="time">
+            <input type="time" name="time" id="time" required>
             <label for="capacity">Capacity</label>
             <input type="text" name="capacity" id="capacity">
             <label for="price">Ticket Price</label>

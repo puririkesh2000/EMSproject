@@ -1,8 +1,9 @@
-<?php
+<?php 
    if(!isset($_SESSION)) 
    { 
        session_start(); 
     } 
+    require 'dbuser.php';
     ?>
 <html>
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -10,11 +11,13 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="Navbar.css">
-    </link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body > 
-    <nav class="navbar" id='navbar' >
+<body>
+    <nav class="navbar" id='navbar'>
         <div class="navbar-container">
             <img src="" alt="logo">
             <ul class="navbar-menu">
@@ -28,7 +31,7 @@
                     <li class="navbar-item">EVENTS</li>
                 </a>
             </ul>
-         
+
             <script>
             // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
             window.onscroll = function() {
@@ -37,7 +40,7 @@
 
             function scrollFunction() {
                 if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                    document.getElementById("navbar").style.height = "70px";
+                    document.getElementById("navbar").style.height = "60px";
                     // document.getElementById("navbar").classList.add("add-shadow");
 
                 } else {
@@ -70,9 +73,10 @@
             ?>
 
             <div class=" navbar-button">
-                <button class="navbar-log" onclick="openpopup()">LOGIN<i class="fa-solid fa-user"></i></button>
+                <button class="navbar-log" onclick=" sclosepopup();openpopup()">LOGIN<i
+                        class="fa-solid fa-user"></i></button>
 
-                <button class="navbar-signup" onclick="sopenpopup()"> SIGNUP<i
+                <button class="navbar-signup" onclick="closepopup();sopenpopup()"> SIGNUP<i
                         class="fa-solid fa-user-plus"></i></button>
             </div>
             <?php
@@ -83,17 +87,23 @@
     <!-- Login Popup -->
     <div class="navbar-popup" id="popup">
         <div class="header">
-            <h4>LOGIN TO YOUR ACCOUNT</h4>
+            <h2>LOGIN TO YOUR ACCOUNT</h2>
             <span onclick="closepopup()"><i class="fa-solid fa-xmark"></i></span>
         </div>
         <form action="dbuser.php" method="POST">
             <div class="group-sec">
                 <label for="email">Email </label>
-                <input type="text" name="email" id="email">
+                <div class="input-icon">
+                    <input type="text" name="email" id="email" placeholder="Email Address">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
             </div>
             <div class="group-sec">
                 <label for="password">Password </label>
-                <input type="text" name="password" id="password">
+                <div class="input-icon">
+                    <input type="text" name="password" id="password" placeholder="Password">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
             </div>
             <div class="popup-button">
                 <button name="signin" class="navbar-log">Sign In<i class="fa-solid fa-user"></i></button>
@@ -103,7 +113,7 @@
         </form>
         <div class="button-signup">
             <h4>Don't have an account? </h4>
-            <button class="navbar-signup" onclick="sopenpopup()">Sign Up
+            <button class="navbar-signup" onclick="closepopup();sopenpopup()">Sign Up
                 <i class="fa-solid fa-user-plus"></i></button>
         </div>
     </div>
@@ -124,48 +134,69 @@
     <!-- Signup Popup -->
     <div class="navbar-popup" id="spopup">
         <div class="header">
-            <h4>SIGNUP TO YOUR ACCOUNT</h4>
+            <h2>SIGNUP TO YOUR ACCOUNT</h2>
             <span onclick="sclosepopup()"><i class="fa-solid fa-xmark"></i></span>
         </div>
         <form action="dbuser.php" method="POST">
             <div class="group">
                 <div class="column">
-                    <label for="fname">FirstName * </label>
-                    <input type="text" name="fname" id="fname">
+                    <label for="fname">First Name * </label>
+                    <div class="input-icon">
+                        <input type="text" name="fname" id="fname" placeholder="Enter First Name" required>
+                        <i class="fa-sharp fa-solid fa-user-pen"></i>
+                    </div>
                 </div>
-                <i class="fa-sharp fa-solid fa-user-pen" id="icon1"></i>
                 <div class="column-sec">
-                    <label for="lname">LastName* </label>
-                    <input type="text" name="lname" id="lname">
+                    <label for="lname">Last Name* </label>
+                    <div class="input-icon">
+                        <input type="text" name="lname" id="lname" placeholder="Enter Last Name" required>
+                        <i class="fa-sharp fa-solid fa-user-pen"></i>
+                    </div>
                 </div>
-                <i class="fa-sharp fa-solid fa-user-pen" id="icon2"></i>
             </div>
             <div class="group-sec">
-                <label for="email">Email*<i class="fa-solid fa-envelope" id='icon3'></i> </label>
-                <input type="text" name="email" id="email">
+                <label for="email">Email* </label>
+                <div class="input-icon">
+                    <input type="text" name="email" id="email" placeholder="Enter Email" required>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
             </div>
 
             <div class="group">
                 <div class=" column">
-                    <label for="pass">Password*<i class="fa-solid fa-lock"></i></label>
-                    <input type="text" name="password" id="pass">
+                    <label for="pass">Password*</label>
+                    <div class="input-icon">
+                        <input type="text" name="password" id="pass" placeholder="Enter Password" required>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
                 </div>
                 <div class="column-sec">
-                    <label for="cpassword">ConfirmPassword </label>
-                    <input type="text" name="" id="cpassword">
+                    <label for="cpassword">Confirm Password </label>
+                    <div class="input-icon">
+                        <input type="text" name="cpassword" id="cpassword" placeholder="Enter Confirm Password"
+                            required>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
                 </div>
             </div>
             <div class="group-sec">
                 <label for="phone">Phone </label>
-                <input type="text" name="phone" id=" phone">
+                <div class="input-icon">
+                    <input type="text" name="phone" id=" phone" placeholder="Enter Phone" required>
+                    <i class="fa-solid fa-phone"></i>
+                </div>
             </div>
+            <?php
+            if (isset($ErrMsg1)){
+            echo $ErrMsg1; } ?>
             <div class="popup-button">
                 <button name="signup" class="navbar-signup">Sign Up<i class="fa-solid fa-user-plus"></i></button>
             </div>
         </form>
         <div class="button-signup">
             <h4>Already have an account?</h4>
-            <button name="signin" onclick="openpopup()" class="navbar-log">Sign In<i class="fa-solid fa-user"></i></button>
+            <button name="signin" onclick="sclosepopup();openpopup()" class="navbar-log">Sign In<i
+                    class="fa-solid fa-user"></i></button>
 
         </div>
     </div>
@@ -186,4 +217,5 @@
     </script>
 
 </body>
+
 </html>

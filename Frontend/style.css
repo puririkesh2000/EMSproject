@@ -27,6 +27,7 @@ align-items: center;
     height: 100%;
     color: white;
     padding: 150px 0px 0px 200px;
+    font-size: 48px;
     /* margin: 150px 0px 0px 200px ; */
 }
 .Boxarea{
@@ -39,8 +40,10 @@ align-items: center;
 }
 .Content_Boxarea{
     display: flex;
-    flex-direction: column;
-    background-color: black;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:#102b7b;
     color: white;
     box-shadow: 0 0 8px 30px #ffffff96;
     width: 50%;
@@ -51,8 +54,23 @@ align-items: center;
 .a_Boxarea{
     display: flex;
     justify-content:end;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+.a_Boxarea:hover{
+    letter-spacing: 1px;
 }
 .h3_Boxarea{
-    margin-top: -5px;
-}
+    margin-top: 10px;
 
+}
+.left-boxarea{
+    width: 100% ;
+    display: flex;
+ 
+}
+.right-boxarea{
+    margin-left: 30px;
+    /* width: 50%; */
+}

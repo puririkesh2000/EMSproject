@@ -17,7 +17,7 @@
     </link>
 </head>
 <h5 class="container-heading">FEATURED EVENTS</h5>
-<div class="event-container">
+<div class="event-container" onclick="sclosepopup(); closepopup()">
     <?php
     require 'dbcon.php';
     $sql="SELECT * FROM `eventinfo` ORDER BY `date` ASC";
@@ -29,7 +29,7 @@
          
         ?>
 
-    <div class="card">
+    <div class=" card">
         <?php
         if(isset($_SESSION['userName'])) {
         $s="SELECT usertype FROM `usertable` WHERE email='".$_SESSION['userName']."'";
