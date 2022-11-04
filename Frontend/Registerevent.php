@@ -1,12 +1,12 @@
 <?php
+
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 include 'Navbar.php';
 
-   if(!isset($_SESSION)) 
-   { 
-       session_start(); 
-    } 
-    
-    // require 'Events.php';
+// require 'Events.php';
 if(isset( $_SESSION['userName'])){
 echo $_SESSION['userName'];
 // if((time() - $_SESSION['last_login_timestamp'])>60){
@@ -16,43 +16,75 @@ echo $_SESSION['userName'];
 <link rel="stylesheet" type="text/css" href="Registerevent.css">
 
 </link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class='event'>
     <form action="dbevent.php" method='POST' enctype='multipart/form-data'>
         <div class='Registerevent'>
-            <label for="image">Image</label>
-            <input type="file" name='image' id='image'>
+            <h2>Event Information</h2>
+            <label for="image"> Choose a Photo</label>
+            <div class="input-icon">
+                <input type="file" name='image' id='image'>
+                <i class="fa-solid fa-image"></i>
+            </div>
             <label for="name">Event Name</label>
-            <input type="text" name='name' id='name' required>
+            <div class="input-icon">
+                <input type="text" name='name' id='name' required placeholder="Enter Event Name"> <i
+                    class="fa-solid fa-file"></i>
+            </div>
             <label for="loc">Location</label>
-            <input type="text" name='location' id='loc' required>
+            <div class="input-icon">
+                <input type="text" name='location' id='loc' required placeholder="Enter Event Location">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
             <label for="date">Date</label>
-            <input type="date" name='date' id='date' required>
+            <div class="input-icon">
+                <input type="date" name='date' id='date' required placeholder="Enter Event Date">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
             <label for="desc">Description</label>
-            <textarea name="description" id="desc" cols="30" rows="5" required></textarea>
+            <div class="input-icon">
+                <textarea name="description" id="desc" cols="30" rows="5" required
+                    placeholder="Enter Event Description"></textarea>
+                <!-- <i class="fa-sharp fa-solid fa-file-word"></i> -->
+            </div>
             <label for="orgname">Event Organizers</label>
-            <input type="text" name='orgname' id='orgname' required>
-        </div>
-        <div class="Eventinfo">
-            <h3>Event Detail</h3>
+            <div class="input-icon">
+                <input type="text" name='orgname' id='orgname' required placeholder="Enter Event Organizers">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+
+            <!-- </div>
+        <div class="Eventinfo"> -->
+            <h2>Event Detail</h2>
             <label for="time">Time</label>
-            <input type="time" name="time" id="time" required>
+            <div class="input-icon">
+                <input type="time" name="time" id="time" required placeholder="Enter Event Time">
+                <i class="fa-solid fa-business-time"></i>
+            </div>
             <label for="capacity">Capacity</label>
-            <input type="text" name="capacity" id="capacity">
+            <div class="input-icon">
+                <input type="text" name="capacity" id="capacity" placeholder="Enter Event Capacity">
+                <i class="fa-solid fa-clipboard-user"></i>
+            </div>
+
             <label for="price">Ticket Price</label>
-            <input type="text" name="price" id="price">
-            <!-- <input type="submit" name="submit" value="Save"> -->
+            <div class="input-icon">
+                <input type="text" name="price" id="price" placeholder="Enter Event Ticket Price">
+                <i class="fa-solid fa-dollar-sign"></i>
+            </div>
 
         </div>
-        <input type="submit" name="save" id="">
+        <input type="submit" name="save" id="" class="button-submit">
     </form>
-    hi
-    highlight_file
+
     <?php
     }
     else{
         // echo "You need to login to register";
-    include 'Footer.php';
+    include 'Error.php';
         // header ('Refresh: 3; url=Footer.php');
     }
 ?>

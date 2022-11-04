@@ -1,7 +1,10 @@
 <?php
 // Importing db connection
 
-// session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+ } 
 
 
 
@@ -22,32 +25,40 @@ if (isset($_POST['signup'])){
     $sresult=mysqli_query($con,$ss);
     $snum=mysqli_num_rows($sresult);
     if($snum==1){
-    echo "Already exits";
+    $_SESSION['msg']= " Email Already exits";
+    header("Location:Registerevent.php");
     
     }
     elseif($password != $cpassword){
-        echo "passwords doesn't match";
+        $_SESSION['msg']= "Passwords doesn't match";
+        header("Location:Registerevent.php");
+
    }
     else{
     if (!preg_match ("/^[a-zA-z]*$/", $fname) ) {  
-        $ErrMsg1 = "Only alphabets and whitespace are allowed.";  
-                 echo $ErrMsg1;  
+        $_SESSION['msg'] = "Only alphabets and whitespace are allowed in name.";  
+                 header("Location:Registerevent.php");
+
     }
     elseif (!preg_match ("/^[a-zA-z]*$/", $fname) ) {  
-        $ErrMsg2= "Only alphabets and whitespace are allowed.";  
-                 echo $ErrMsg2;  
+        $_SESSION['msg']= "Only alphabets and whitespace are allowed in name.";  
+                 header("Location:Registerevent.php");
+
     }
     elseif (!preg_match ("/^[0-9]*$/", $phone) ){  
-        $ErrMsg3 = "Only numeric value is allowed.";  
-        echo $ErrMsg3;
+        $_SESSION['msg'] = "Only numeric value is allowed in phone number.";  
+        header("Location:Registerevent.php");
+
     }
     elseif (strlen($phone)<10 || strlen($phone)>10) {  
-        $ErrMsg = "Mobile must have 10 digits.";  
-                echo $ErrMsg;  
+        $_SESSION['msg'] = "Mobile number must have 10 digits.";  
+                header("Location:Registerevent.php");
+ 
     }
     elseif (!preg_match ($pattern, $email) ){  
-    $ErrMsg = "Email is not valid.";  
-            echo $ErrMsg;  
+        $_SESSION['msg'] = "Email is not valid.";  
+            header("Location:Registerevent.php");
+
     }
     else{
     
@@ -68,7 +79,7 @@ else{
 if (isset($_POST['signin'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $s="select*from usertable where email='$email' && password='$password'";
+    $s="SELECT * FROM usertable where email='$email' && password='$password'";
     $result=mysqli_query($con,$s);
     $num=mysqli_num_rows($result);
     
@@ -76,7 +87,7 @@ if (isset($_POST['signin'])){
         $_SESSION['userName'] = $email;
         $_SESSION['last_login_timestamp']=time();
 
-        header('location:home.php');
+        header('Location:Home.php');
     }
 else{
 header("Location:Registerevent.php");

@@ -1,4 +1,6 @@
 <?php
+include 'Navbar.php';
+
    if(!isset($_SESSION)) 
    { 
        session_start(); 
@@ -16,11 +18,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     </link>
 </head>
-<h5 class="container-heading">FEATURED EVENTS</h5>
+<h5 class="container-heading" style="padding-top:30px">FEATURED EVENTS</h5>
 <div class="event-container" onclick="sclosepopup(); closepopup()">
     <?php
     require 'dbcon.php';
-    $sql="SELECT * FROM `eventinfo` ORDER BY `date` ASC limit 6";
+    $sql="SELECT * FROM `eventinfo` ORDER BY `date` ASC";
     $query_run=mysqli_query($con,$sql);
     $num=mysqli_num_rows($query_run);
     if($num>0){

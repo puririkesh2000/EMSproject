@@ -8,36 +8,43 @@
     display: flex;
     justify-content: center;
 align-items: center;
-/* height: 100%; */
+z-index: -1;
+background-color: rgb(255, 255, 255);
 }
 .Banner-img{
-    background-image: url("../Images/4.jpeg");
+    background-image: url("../Images/1.png");
     height: 600px;
     width: 100%;
     background-repeat: no-repeat;
+    background-position: right;
 }
 
 .Banner-Overlay{
     height: 600px;
     margin: 0px;
-    background-color: rgba(128, 128, 128, 0.204);
+    background-color: rgba(22, 92, 197, 0.204);
+
 }
 .Banner-content{
     display: flex;
     height: 100%;
     color: white;
-    padding: 150px 0px 0px 200px;
-    font-size: 48px;
-    /* margin: 150px 0px 0px 200px ; */
+    padding: 150px 0px 0px 50px ;
+    font-size: 30px;
 }
 .Boxarea{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: -110px 80px ;
-    /* width: 1100px; */
+    /* position: absolute; */
+    /* bottom: 0px; */
+    /* right: 105px; */
+    margin: -110px 110px ;
+/* z-index: 999 ; */
+/* width: 85%; */
 }
+
 .Content_Boxarea{
     display: flex;
     flex-direction: row;

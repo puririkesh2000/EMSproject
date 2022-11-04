@@ -46,6 +46,8 @@ echo $_SESSION['last_login_timestamp'];
             </div>
         </div>
     </div>
+
+
     <div class="Boxarea" onclick="sclosepopup(); closepopup()">
         <div class=" Content_Boxarea">
             <div class="left-Boxarea">
@@ -55,7 +57,7 @@ echo $_SESSION['last_login_timestamp'];
                     <h3 class="h3_Boxarea">Looking For a Event?</h3>
                 </div>
             </div>
-            <a href="Events.php" class="a_Boxarea">Search Now<i class="fa-solid fa-arrow-right"></i></a>
+            <a href="Search.php" class="a_Boxarea">Search Now<i class="fa-solid fa-arrow-right"></i></a>
         </div>
         <div class="Content_Boxarea">
             <div class="left-Boxarea">
@@ -69,6 +71,8 @@ echo $_SESSION['last_login_timestamp'];
             <a href="Registerevent.php" class="a_Boxarea">Register Now<i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
+
+
     <?php
     
 

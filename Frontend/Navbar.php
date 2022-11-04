@@ -27,7 +27,7 @@
                 <a href="" style="text-decoration: none;">
                     <li class="navbar-item">ABOUT</li>
                 </a>
-                <a href="Events.php" style="text-decoration: none;">
+                <a href="Search.php" style="text-decoration: none;">
                     <li class="navbar-item">EVENTS</li>
                 </a>
             </ul>
@@ -101,7 +101,7 @@
             <div class="group-sec">
                 <label for="password">Password </label>
                 <div class="input-icon">
-                    <input type="text" name="password" id="password" placeholder="Password">
+                    <input type="password" name="password" id="password" placeholder="Password">
                     <i class="fa-solid fa-lock"></i>
                 </div>
             </div>
@@ -121,7 +121,7 @@
     let popup = document.getElementById("popup");
 
     function openpopup() {
-        document.body.style.backgroundColor = "black";
+        document.body.style.backgroundColor = "rgba(91, 142, 218, 0.204)";
         popup.classList.add("open-popup");
     }
 
@@ -166,14 +166,14 @@
                 <div class=" column">
                     <label for="pass">Password*</label>
                     <div class="input-icon">
-                        <input type="text" name="password" id="pass" placeholder="Enter Password" required>
+                        <input type="password" name="password" id="pass" placeholder="Enter Password" required>
                         <i class="fa-solid fa-lock"></i>
                     </div>
                 </div>
                 <div class="column-sec">
                     <label for="cpassword">Confirm Password </label>
                     <div class="input-icon">
-                        <input type="text" name="cpassword" id="cpassword" placeholder="Enter Confirm Password"
+                        <input type="password" name="cpassword" id="cpassword" placeholder="Enter Confirm Password"
                             required>
                         <i class="fa-solid fa-lock"></i>
                     </div>
@@ -186,9 +186,7 @@
                     <i class="fa-solid fa-phone"></i>
                 </div>
             </div>
-            <?php
-            if (isset($ErrMsg1)){
-            echo $ErrMsg1; } ?>
+
             <div class="popup-button">
                 <button name="signup" class="navbar-signup">Sign Up<i class="fa-solid fa-user-plus"></i></button>
             </div>
@@ -204,7 +202,7 @@
     let spopup = document.getElementById("spopup");
 
     function sopenpopup() {
-        document.body.style.backgroundColor = "black";
+        document.body.style.backgroundColor = "rgba(91, 142, 218, 0.204)";
 
         spopup.classList.add("open-popup");
     }

@@ -1,0 +1,16 @@
+.error-img{
+    background-image: url("../Images/3.png");
+   height: 400px;
+    background-repeat: no-repeat;
+    background-position:center;
+background-size: 500px 500px;}
+.error-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+h3{
+    margin-bottom: 10px;
+}
