@@ -3,6 +3,12 @@
    { 
        session_start(); 
     } 
+    if(isset( $_SESSION['last_login_timestamp'])){
+
+    // if((time() - $_SESSION['last_login_timestamp'])>60){
+    //     session_destroy();
+    //         } 
+    }
     ?>
 <html>
 
@@ -77,6 +83,8 @@ echo $_SESSION['last_login_timestamp'];
     
 
     include 'Events.php';
+    include 'Blogs.php';
+    include 'Footer.php';
     // session_destroy();
     // include 'Registerevent.php';
     ?>

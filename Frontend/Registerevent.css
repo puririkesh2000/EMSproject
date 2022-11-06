@@ -12,7 +12,8 @@ background-image: url("../Images/2.png");
 /* height: 600px;
 width: 100%; */
 background-repeat: no-repeat;
-background-position: right;
+background-position:right;
+
 background-size: 900px 500px;
 margin-left: 250px;
 }
@@ -26,6 +27,11 @@ margin-left: 250px;
 }
 textarea{
     border: none;
+    background-color: transparent;
+    font-size: large;
+    font-weight: bolder;
+    display: flex;
+    justify-content: left;
 }
 textarea:focus{
     outline: none;
@@ -72,3 +78,4 @@ h2{
       .input-icon{
         width: 300px;
       }
+    

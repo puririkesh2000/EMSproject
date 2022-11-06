@@ -90,6 +90,7 @@ if (isset($_POST['signin'])){
         header('Location:Home.php');
     }
 else{
+    $_SESSION['msg'] = "Invalid Email or password ."; 
 header("Location:Registerevent.php");
 }
 }

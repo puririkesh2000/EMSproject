@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar" id='navbar'>
         <div class="navbar-container">
-            <img src="" alt="logo">
+            <img src="../Images/logo2.jpg" alt="logo" width=100 height=40>
             <ul class="navbar-menu">
                 <a href="Home.php" style="text-decoration: none;">
                     <li class="navbar-item">HOME</li>
@@ -53,7 +53,7 @@
 
             <?php
             if(isset($_SESSION['userName'])) {
-                echo "<p class='username'> <i class='fa-solid fa-user'></i>".$_SESSION['userName']."</p>";
+                echo "<p class='username'> <i class='fa-solid fa-user' style='margin-right:5px''></i>" . $_SESSION['userName']."</p>";
                 ?>
             <!-- <a href="Home.php"> -->
             <form method="POST">
@@ -140,7 +140,7 @@
         <form action="dbuser.php" method="POST">
             <div class="group">
                 <div class="column">
-                    <label for="fname">First Name * </label>
+                    <label for="fname">First Name* </label>
                     <div class="input-icon">
                         <input type="text" name="fname" id="fname" placeholder="Enter First Name" required>
                         <i class="fa-sharp fa-solid fa-user-pen"></i>
@@ -171,7 +171,7 @@
                     </div>
                 </div>
                 <div class="column-sec">
-                    <label for="cpassword">Confirm Password </label>
+                    <label for="cpassword">Confirm Password* </label>
                     <div class="input-icon">
                         <input type="password" name="cpassword" id="cpassword" placeholder="Enter Confirm Password"
                             required>
@@ -180,7 +180,7 @@
                 </div>
             </div>
             <div class="group-sec">
-                <label for="phone">Phone </label>
+                <label for="phone">Phone*</label>
                 <div class="input-icon">
                     <input type="text" name="phone" id=" phone" placeholder="Enter Phone" required>
                     <i class="fa-solid fa-phone"></i>

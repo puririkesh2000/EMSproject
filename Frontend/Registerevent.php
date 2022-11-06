@@ -8,10 +8,15 @@ include 'Navbar.php';
 
 // require 'Events.php';
 if(isset( $_SESSION['userName'])){
-echo $_SESSION['userName'];
+    if(isset( $_SESSION['error'])){
+echo  $_SESSION['error'];
+    }
+    if(isset( $_SESSION['last_login_timestamp'])){
+
 // if((time() - $_SESSION['last_login_timestamp'])>60){
 // session_destroy();
 // }
+    }
 ?>
 <link rel="stylesheet" type="text/css" href="Registerevent.css">
 
@@ -26,7 +31,7 @@ echo $_SESSION['userName'];
             <h2>Event Information</h2>
             <label for="image"> Choose a Photo</label>
             <div class="input-icon">
-                <input type="file" name='image' id='image'>
+                <input type="file" name='image' id='image' required>
                 <i class="fa-solid fa-image"></i>
             </div>
             <label for="name">Event Name</label>
@@ -34,19 +39,19 @@ echo $_SESSION['userName'];
                 <input type="text" name='name' id='name' required placeholder="Enter Event Name"> <i
                     class="fa-solid fa-file"></i>
             </div>
-            <label for="loc">Location</label>
+            <label for="loc"> Event Location</label>
             <div class="input-icon">
                 <input type="text" name='location' id='loc' required placeholder="Enter Event Location">
                 <i class="fa-solid fa-location-dot"></i>
             </div>
-            <label for="date">Date</label>
+            <label for="date">Event Date</label>
             <div class="input-icon">
                 <input type="date" name='date' id='date' required placeholder="Enter Event Date">
                 <i class="fa-solid fa-calendar-days"></i>
             </div>
-            <label for="desc">Description</label>
-            <div class="input-icon">
-                <textarea name="description" id="desc" cols="30" rows="5" required
+            <label for="desc">Event Description</label>
+            <div class="input-icon" style="width:700px;background-color:transparent;">
+                <textarea name="description" id="desc" cols="100" rows="20" required
                     placeholder="Enter Event Description"></textarea>
                 <!-- <i class="fa-sharp fa-solid fa-file-word"></i> -->
             </div>
