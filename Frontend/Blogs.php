@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h5 class="container-heading">OUR LATEST BLOGS</h5>
+    <h5 class="container-heading" style="padding-top:40px">OUR LATEST BLOGS</h5>
 
     <div class="blog-body">
         <?php

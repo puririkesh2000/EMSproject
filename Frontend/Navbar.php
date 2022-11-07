@@ -56,7 +56,7 @@
                 echo "<p class='username'> <i class='fa-solid fa-user' style='margin-right:5px''></i>" . $_SESSION['userName']."</p>";
                 ?>
             <!-- <a href="Home.php"> -->
-            <form method="POST">
+            <form method="POST" style="">
                 <button name='logout' value="LOGOUT" class="navbar-log">LOGOUT<i
                         class="fa-solid fa-user-minus"></i></button>
             </form>

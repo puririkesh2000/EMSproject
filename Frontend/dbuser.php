@@ -67,7 +67,10 @@ if (isset($_POST['signup'])){
 $query_run=mysqli_query($con,$sql);
 
 if($query_run){
-    header("Location:Home.php");
+    unset($_SESSION['msg']);   
+    // $_SESSION['success']="Account created succesfully";
+     header("Location:Home.php?message=success");
+
 }
 else{
     header("Location:Registerevent.php");

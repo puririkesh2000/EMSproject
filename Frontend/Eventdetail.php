@@ -3,6 +3,7 @@
    { 
        session_start(); 
     } 
+    include 'Navbar.php';
     ?>
 <html>
 
@@ -58,20 +59,21 @@ $sql="SELECT * FROM `eventdetail` where eid=$id";
 ?>
     <div class="Eventdetail-box">
         <div class="Eventdetail-detail">
-            <h3>Event Detail</h3>
-            <li> <?=$data["time"]?></li>
-            <li><?=$data["capacity"]?></li>
-            <li><?=$data["price"]?></li>
+            <h3 style="color:#102b7b;">Event Detail</h3>
+            <li><i class="fa-solid fa-business-time"></i><?=$data["time"]?></li>
+            <li><i class="fa-solid fa-clipboard-user"></i> <?=$data["capacity"]?></li>
+            <li><i class="fa-solid fa-dollar-sign"></i> <?=$data["price"]?></li>
         </div>
         <div class="Eventdetail-loginbox">
-            Want to register your own event?
-            <a href="Registerevent.php"><button>Register here</button></a>
+           <h4> Want to register your own event?</h4>
+            <a href="Registerevent.php"><button class="navbar-signup">Register here</button></a>
         </div>
     </div>
 
 </div>
 <?php
         }}
+        include 'Footer.php';
 ?>
 
 </html>

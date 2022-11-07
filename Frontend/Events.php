@@ -59,7 +59,7 @@
 
         <div class="card-body">
             <div class='card-img'>
-                <img src="<?=$event['logo']?>" alt="img" height="100" width="170">
+                <img src="<?=$event['logo']?>" alt="img" height="120" width="250">
             </div>
             <div class='card-info'>
                 <a href=" Eventdetail.php?id=<?=$event['eid']?>" class="card-href">

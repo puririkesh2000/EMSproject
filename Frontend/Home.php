@@ -9,6 +9,12 @@
     //     session_destroy();
     //         } 
     }
+    // if(isset( $_SESSION['success'])){
+    //     echo '<script>alert("Message")</script>';    }
+    if(!empty($_GET['message'])) {
+        $message = $_GET['message'];
+        echo '<script>alert("'.$message.'")</script>';    
+}
     ?>
 <html>
 
@@ -34,8 +40,8 @@ include 'Navbar.php';
 // session_start();
 
 if(isset($_SESSION['userName'])) {
-echo $_SESSION['userName'];
-echo $_SESSION['last_login_timestamp'];
+// echo $_SESSION['userName'];
+// echo $_SESSION['last_login_timestamp'];
 }
 ?>
     <!--Banner  -->
@@ -85,8 +91,6 @@ echo $_SESSION['last_login_timestamp'];
     include 'Events.php';
     include 'Blogs.php';
     include 'Footer.php';
-    // session_destroy();
-    // include 'Registerevent.php';
     ?>
 
 

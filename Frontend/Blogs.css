@@ -6,12 +6,11 @@
 
 .blog-body{
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 40px;
     gap: 50px;
-/* color: antiquewhite; */
     }
 .blog-card{
     margin-top: 10px ;

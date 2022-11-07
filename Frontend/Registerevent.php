@@ -50,7 +50,7 @@ echo  $_SESSION['error'];
                 <i class="fa-solid fa-calendar-days"></i>
             </div>
             <label for="desc">Event Description</label>
-            <div class="input-icon" style="width:700px;background-color:transparent;">
+            <div class="input-icon" style="width:450px;background-color:transparent;">
                 <textarea name="description" id="desc" cols="100" rows="20" required
                     placeholder="Enter Event Description"></textarea>
                 <!-- <i class="fa-sharp fa-solid fa-file-word"></i> -->
@@ -90,7 +90,10 @@ echo  $_SESSION['error'];
     else{
         // echo "You need to login to register";
     include 'Error.php';
-        // header ('Refresh: 3; url=Footer.php');
-    }
+    // header ('Refresh: 3; url=Footer.php');
+}
 ?>
 </div>
+<?php
+include 'Footer.php';
+?>
