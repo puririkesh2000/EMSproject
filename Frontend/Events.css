@@ -17,8 +17,12 @@
     flex-wrap: wrap;
     gap: 50px;
     margin-bottom: 30px;
+    /* margin-left: 200px;  */
+    /* margin-right: 200px; */
 
 }
+
+
 .card-action {
     display: flex;
     flex-direction: row;
@@ -45,6 +49,7 @@
 
 .card-body {
 height: 320px;
+
     color: white;
     display: flex;
     flex-direction: column;

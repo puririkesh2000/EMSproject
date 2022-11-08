@@ -6,11 +6,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <footer class="footer">
+        <footer class="footer" onclick="sclosepopup(); closepopup()">
             <div class="footer-container">
 <div class="footer-content">
 <img src="../Images/logo2.jpg" alt="logo"  width=100 height=40 style="margin-left: -250px;">
-<p class="footer-p"> Event Management System is an platform started with the main focus to provide platform to people who look out for various events they’d like to join. It allows users to surf through various events that they’d like to be a part of and get all the details about it. It will allow organizers to add users to learn about events at any instant of time when they are free which will save time for both.
+<p class="footer-p" id='about'> Event Management System is an platform started with the main focus to provide platform to people who look out for various events they’d like to join. It allows users to surf through various events that they’d like to be a part of and get all the details about it. It will allow organizers to add users to learn about events at any instant of time when they are free which will save time for both.
     </p>
 <ul class="first">
     <li><i class="fa-brands fa-youtube"></i></li>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 29, 2022 at 08:01 AM
+-- Generation Time: Nov 08, 2022 at 10:45 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -34,15 +34,18 @@ CREATE TABLE IF NOT EXISTS `eventdetail` (
   `capacity` varchar(1000) NOT NULL,
   `price` varchar(1000) NOT NULL,
   PRIMARY KEY (`eid`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `eventdetail`
 --
 
 INSERT INTO `eventdetail` (`eid`, `time`, `capacity`, `price`) VALUES
-(4, '16:00:00', 'sad', 'sad'),
-(5, '16:59:00', 'g', 'g');
+(8, '23:46:00', '1000', '300'),
+(10, '11:00:00', '500', '100'),
+(11, '13:00:00', '200', '500'),
+(12, '16:09:00', '5000', '200'),
+(13, '13:00:00', '2000', '100');
 
 -- --------------------------------------------------------
 
@@ -53,6 +56,7 @@ INSERT INTO `eventdetail` (`eid`, `time`, `capacity`, `price`) VALUES
 DROP TABLE IF EXISTS `eventinfo`;
 CREATE TABLE IF NOT EXISTS `eventinfo` (
   `eid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `location` varchar(100) NOT NULL,
   `date` date NOT NULL,
@@ -60,21 +64,18 @@ CREATE TABLE IF NOT EXISTS `eventinfo` (
   `organizers` varchar(255) NOT NULL,
   `logo` varchar(255) NOT NULL,
   PRIMARY KEY (`eid`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `eventinfo`
 --
 
-INSERT INTO `eventinfo` (`eid`, `name`, `location`, `date`, `description`, `organizers`, `logo`) VALUES
-(25, 't', 't', '2022-09-30', 't', 't', 'upload/'),
-(24, 'g', 'g', '2022-10-05', 'g', 'g', 'upload/'),
-(4, 'Acefiesta', 'ChayaCenter,Thamel', '2022-10-27', 'sdasdadsad', 'Garage Entertainment in partnership with ncell nepal', 'upload/Opportunity.jpg'),
-(18, 'a', 'a', '2022-10-06', 'a', 'a', 'upload/Opportunity.jpg'),
-(19, 'Ryugu', '1', '2022-10-03', '2', 'wr', 'upload/'),
-(20, 'à¤¸à¤¨à¤¿à¤œ', 'sadasd', '2022-10-06', 'sdadsad', 'asd', 'upload/289116620_910528979919751_1025787496671285894_n.png'),
-(21, 'q', 'q', '2022-10-04', 'q', 'q', 'upload/289116620_910528979919751_1025787496671285894_n.png'),
-(22, 'q', 'q', '2022-10-04', 'q', 'q', 'upload/289116620_910528979919751_1025787496671285894_n.png');
+INSERT INTO `eventinfo` (`eid`, `uid`, `name`, `location`, `date`, `description`, `organizers`, `logo`) VALUES
+(10, 30, 'IT FEST', 'NCIT,Balkumari', '2022-11-23', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit magnam sapiente dolor quos expedita quis, ad perspiciatis hic nihil laboriosam at eius.', 'BEIT 5th SEM', 'upload/blog1.png'),
+(11, 29, 'The Next', 'Hotel Everest', '2022-11-16', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit magnam sapiente dolor quos expedita quis, ad perspiciatis hic nihil laboriosam at eius.', 'InfoTech', 'upload/blog2.png'),
+(8, 8, 'November Festival', 'Khokana,lalitpur', '2022-11-30', 'lorem ipsum', 'Gyanodaya School', 'upload/1.jpg'),
+(12, 31, 'Musical Night', 'Dashrath Rangasala', '2022-11-19', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit magnam sapiente dolor quos expedita quis, ad perspiciatis hic nihil laboriosam at eius.', 'Tourism Board', 'upload/blog3.png'),
+(13, 32, 'Economics Seminar', 'National Hall', '2022-11-22', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages\r\n\r\nLorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit magnam sapiente dolor quos expedita quis, ad perspiciatis hic nihil laboriosam at eius.', 'Rams Team', 'upload/Opportunity.jpg');
 
 -- --------------------------------------------------------
 
@@ -92,16 +93,18 @@ CREATE TABLE IF NOT EXISTS `usertable` (
   `phone` varchar(100) NOT NULL,
   `usertype` varchar(100) NOT NULL DEFAULT 'user',
   PRIMARY KEY (`uid`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `usertable`
 --
 
 INSERT INTO `usertable` (`uid`, `firstname`, `lastname`, `email`, `password`, `phone`, `usertype`) VALUES
-(2, 'Sam', 'Rai', 'samrai@gmail.com', 'sam123', '2', 'user'),
-(9, 'sanir', 'maharjan', 'sanirmaharjan123@gmail.com', 'sanir123', '5555555555', 'user'),
-(8, 'Admin', 'admin', 'admin@gmail.com', 'admin123', '9841000000', 'admin');
+(8, 'Admin', 'admin', 'admin@gmail.com', 'admin123', '9841000000', 'admin'),
+(32, 'Ram', 'karki', 'ram@gmail.com', 'ramkarki123', '9812221921', 'user'),
+(30, 'Sanij', 'Maharjan', 'sanij@gmail.com', 'Sanij123', '9841429087', 'user'),
+(31, 'Rikesh', 'Puri', 'rikesh@gmail.com', 'rikesh123', '9801372898', 'user'),
+(29, 'samyog', 'adhikari', 'samyog@gmail.com', 'samyog123', '9861587954', 'user');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

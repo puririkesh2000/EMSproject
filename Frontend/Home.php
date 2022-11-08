@@ -9,12 +9,13 @@
     //     session_destroy();
     //         } 
     }
-    // if(isset( $_SESSION['success'])){
-    //     echo '<script>alert("Message")</script>';    }
-    if(!empty($_GET['message'])) {
-        $message = $_GET['message'];
-        echo '<script>alert("'.$message.'")</script>';    
-}
+
+    if(isset( $_SESSION['success'])){
+
+        echo '<script>alert("'.$_SESSION['success'].'")</script>'; 
+        unset($_SESSION['success']);
+    }  
+
     ?>
 <html>
 
@@ -37,12 +38,12 @@
 include 'Navbar.php';
     ?>
     <?php
-// session_start();
-
-if(isset($_SESSION['userName'])) {
+// if(isset($_SESSION['id'])) {
+//     echo $_SESSION['id'];}
+// if(isset($_SESSION['userName'])) {
 // echo $_SESSION['userName'];
 // echo $_SESSION['last_login_timestamp'];
-}
+// }
 ?>
     <!--Banner  -->
     <div class="Banner" onclick="sclosepopup(); closepopup()">

@@ -74,6 +74,7 @@
 }
 .open-popup{
   position: fixed;
+  z-index: 1;
   visibility: visible;
   top: 50%;
 
@@ -126,6 +127,7 @@ label{
 input{
   border: none;
   background-color: white;
+  width: 450px;
 }
 input:focus{
   outline: none;

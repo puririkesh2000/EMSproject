@@ -46,7 +46,8 @@ ul{
 /* list-style: none; */
 display: flex;
 justify-content: space-around;
-width: 270px;
+width: 290px;
+margin-left: -100px;
 }
 
 .second-li{

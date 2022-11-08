@@ -8,7 +8,7 @@
 <body>
     <h5 class="container-heading" style="padding-top:40px">OUR LATEST BLOGS</h5>
 
-    <div class="blog-body">
+    <div class="blog-body" onclick="sclosepopup(); closepopup()">
         <?php
     $data = array(
         array("../Images/blog1.png"," Attending an event not only gives you the opportunity to meet others but also gives exposure to newideas that could be implemented in your own work. ","Why should you participate in event?","By Rikesh Puri 191430"),

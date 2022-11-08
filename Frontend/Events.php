@@ -36,7 +36,8 @@
         $query=mysqli_query($con,$s);
         if(mysqli_num_rows($query) > 0){
             while($data = mysqli_fetch_assoc($query)){
-                
+
+
         if($data['usertype']=='admin'){
         ?>
         <div class="card-action">

@@ -29,6 +29,7 @@ echo  $_SESSION['error'];
     <form action="dbevent.php" method='POST' enctype='multipart/form-data'>
         <div class='Registerevent'>
             <h2>Event Information</h2>
+            <input type="hidden" name='uid' id='uid' value=<?php echo $_SESSION['id']?>>
             <label for="image"> Choose a Photo</label>
             <div class="input-icon">
                 <input type="file" name='image' id='image' required>

@@ -24,7 +24,7 @@
                 <a href="Home.php" style="text-decoration: none;">
                     <li class="navbar-item">HOME</li>
                 </a>
-                <a href="" style="text-decoration: none;">
+                <a href="#about" style="text-decoration: none;">
                     <li class="navbar-item">ABOUT</li>
                 </a>
                 <a href="Search.php" style="text-decoration: none;">

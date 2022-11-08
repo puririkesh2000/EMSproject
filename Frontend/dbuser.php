@@ -29,9 +29,14 @@ if (isset($_POST['signup'])){
     header("Location:Registerevent.php");
     
     }
-    elseif($password != $cpassword){
+    elseif($password != $cpassword ){
         $_SESSION['msg']= "Passwords doesn't match";
         header("Location:Registerevent.php");
+
+   }
+   elseif(strlen($password)<8){
+    $_SESSION['msg']= "Password length must be greater than 8 digit.";
+    header("Location:Registerevent.php");
 
    }
     else{
@@ -68,8 +73,8 @@ $query_run=mysqli_query($con,$sql);
 
 if($query_run){
     unset($_SESSION['msg']);   
-    // $_SESSION['success']="Account created succesfully";
-     header("Location:Home.php?message=success");
+    $_SESSION['success']="Account created succesfully";
+     header("Location:Home.php");
 
 }
 else{
@@ -87,6 +92,9 @@ if (isset($_POST['signin'])){
     $num=mysqli_num_rows($result);
     
     if($num==1){
+        while($data = mysqli_fetch_assoc($result)){
+        $_SESSION['id']=$data['uid'];
+        }
         $_SESSION['userName'] = $email;
         $_SESSION['last_login_timestamp']=time();
 
