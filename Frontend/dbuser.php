@@ -96,6 +96,8 @@ if (isset($_POST['signin'])){
         $_SESSION['id']=$data['uid'];
         }
         $_SESSION['userName'] = $email;
+        // $_SESSION['userType'] = $data['usertype'];
+
         $_SESSION['last_login_timestamp']=time();
 
         header('Location:Home.php');

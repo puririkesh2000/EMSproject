@@ -1,12 +1,9 @@
 <?php
-include 'Navbar.php';
-
    if(!isset($_SESSION)) 
    { 
        session_start(); 
     } 
-    $date_now =date("Y-m-d");
-
+    include 'Navbar.php';
     ?>
 
 <html>
@@ -20,29 +17,21 @@ include 'Navbar.php';
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     </link>
 </head>
-<h5 class="container-heading" style="padding-top:30px">FEATURED EVENTS</h5>
+<h5 class="userevent-heading">FEATURED EVENTS</h5>
 <div class="event-container" onclick="sclosepopup(); closepopup()">
     <?php
     require 'dbcon.php';
-    $sql="SELECT * FROM `eventinfo` WHERE date > '".$date_now."' ORDER BY `date` ASC limit 8";
+    $sql="SELECT * FROM eventinfo INNER JOIN eventdetail ON eventinfo.eid=eventdetail.eid WHERE eventinfo.uid='". $_SESSION['id']."';";
     $query_run=mysqli_query($con,$sql);
     $num=mysqli_num_rows($query_run);
-    if($num>0){
-        foreach($query_run as $event)
-        {
-         
-        ?>
+    if($num>0){ ?>
+    <?php
+     foreach($query_run as $event)
+    {
+    ?>
 
     <div class=" card">
-        <?php
-        if(isset($_SESSION['userName'])) {
-        $s="SELECT usertype FROM `usertable` WHERE email='".$_SESSION['userName']."'";
-        $query=mysqli_query($con,$s);
-        if(mysqli_num_rows($query) > 0){
-            while($data = mysqli_fetch_assoc($query)){
-                
-        if($data['usertype']=='admin'){
-        ?>
+
         <div class="card-action">
 
             <a href="Eventedit.php?id=<?=$event['eid']?>"><button class='card-button'>
@@ -53,17 +42,13 @@ include 'Navbar.php';
                         class="fa-solid fa-trash"></i></button>
             </form>
         </div>
-        <?php
-        }
-        }
-    }}
-        ?>
+
 
 
 
         <div class="card-body">
             <div class='card-img'>
-                <img src="<?=$event['logo']?>" alt="img" height="100" width="170">
+                <img src="<?=$event['logo']?>" alt="img" height="120" width="250">
             </div>
             <div class='card-info'>
                 <a href=" Eventdetail.php?id=<?=$event['eid']?>" class="card-href">
@@ -83,12 +68,22 @@ include 'Navbar.php';
     }
 
     }
-    // session_destroy();
+    else{
+        ?>
+    <div class="Myevent-container">
+        <div class="error-img">
+        </div>
+        <h3 class="error-h3">
+            You haven't registered an event!
+            <a href="Registerevent.php"><button class="navbar-signup" style="width:140px;margin-top:5px;">Register
+                    Now</button></a>
+        </h3>
+    </div>
 
-    ?>
 </div>
 </div>
 <?php 
+    }
 include 'Footer.php';
 ?>
 

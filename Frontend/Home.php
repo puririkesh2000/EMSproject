@@ -3,6 +3,15 @@
    { 
        session_start(); 
     } 
+    $date_now = date("m/d/Y");
+    // echo $date_now;
+    $date_convert = date_format(new DateTime($date_now), "m/d/Y");
+// echo $date_convert;
+    $_SESSION['eName'] = $date_now;
+    unset($_SESSION['date']); 
+    unset($_SESSION['rdate']); 
+
+
     if(isset( $_SESSION['last_login_timestamp'])){
 
     // if((time() - $_SESSION['last_login_timestamp'])>60){
@@ -38,8 +47,9 @@
 include 'Navbar.php';
     ?>
     <?php
-// if(isset($_SESSION['id'])) {
-//     echo $_SESSION['id'];}
+if(isset($_SESSION['id'])) {
+    // echo  $_SESSION['id'];
+}
 // if(isset($_SESSION['userName'])) {
 // echo $_SESSION['userName'];
 // echo $_SESSION['last_login_timestamp'];

@@ -30,6 +30,16 @@
                 <a href="Search.php" style="text-decoration: none;">
                     <li class="navbar-item">EVENTS</li>
                 </a>
+                <?php
+            if(isset($_SESSION['userName'])) {
+                if(isset($_SESSION['usertype'])=="admin"){}
+                ?>
+
+                <a href="Userevent.php" style="text-decoration: none;">
+                    <li class="navbar-item">MY EVENT</li>
+                </a>
+                <?php }
+                          ?>
             </ul>
 
             <script>
@@ -53,9 +63,13 @@
 
             <?php
             if(isset($_SESSION['userName'])) {
+                ?>
+
+            <?php
                 echo "<p class='username'> <i class='fa-solid fa-user' style='margin-right:5px''></i>" . $_SESSION['userName']."</p>";
                 ?>
             <!-- <a href="Home.php"> -->
+
             <form method="POST" style="">
                 <button name='logout' value="LOGOUT" class="navbar-log">LOGOUT<i
                         class="fa-solid fa-user-minus"></i></button>

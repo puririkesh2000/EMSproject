@@ -8,9 +8,7 @@ include 'Navbar.php';
 
 // require 'Events.php';
 if(isset( $_SESSION['userName'])){
-    if(isset( $_SESSION['error'])){
-echo  $_SESSION['error'];
-    }
+
     if(isset( $_SESSION['last_login_timestamp'])){
 
 // if((time() - $_SESSION['last_login_timestamp'])>60){
@@ -35,6 +33,11 @@ echo  $_SESSION['error'];
                 <input type="file" name='image' id='image' required>
                 <i class="fa-solid fa-image"></i>
             </div>
+            <?php 
+            if(isset($_SESSION['rerror'])){
+            echo $_SESSION['rerror'];
+            }
+?>
             <label for="name">Event Name</label>
             <div class="input-icon">
                 <input type="text" name='name' id='name' required placeholder="Enter Event Name"> <i
@@ -50,6 +53,11 @@ echo  $_SESSION['error'];
                 <input type="date" name='date' id='date' required placeholder="Enter Event Date">
                 <i class="fa-solid fa-calendar-days"></i>
             </div>
+            <?php 
+            if(isset($_SESSION['rdate'])){
+            echo $_SESSION['rdate'];
+            }
+?>
             <label for="desc">Event Description</label>
             <div class="input-icon" style="width:450px;background-color:transparent;">
                 <textarea name="description" id="desc" cols="100" rows="20" required

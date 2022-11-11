@@ -3,6 +3,7 @@
    { 
        session_start(); 
     } 
+    $date_now =date("Y-m-d");
     ?>
 
 <html>
@@ -20,7 +21,7 @@
 <div class="event-container" onclick="sclosepopup(); closepopup()">
     <?php
     require 'dbcon.php';
-    $sql="SELECT * FROM `eventinfo` ORDER BY `date` ASC limit 6";
+    $sql="SELECT * FROM `eventinfo` WHERE date > '".$date_now."' ORDER BY `date` ASC limit 8";
     $query_run=mysqli_query($con,$sql);
     $num=mysqli_num_rows($query_run);
     if($num>0){
@@ -36,9 +37,10 @@
         $query=mysqli_query($con,$s);
         if(mysqli_num_rows($query) > 0){
             while($data = mysqli_fetch_assoc($query)){
-
-
-        if($data['usertype']=='admin'){
+                
+                if($data['usertype']=='admin'){
+            // $_SESSION['usertype']=$data['usertype'];
+            // $_SESSION['eid']=$event['eid'];
         ?>
         <div class="card-action">
 
