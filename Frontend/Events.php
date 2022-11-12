@@ -82,7 +82,6 @@
     }
 
     }
-    // session_destroy();
 
     ?>
 </div>

@@ -12,7 +12,6 @@ $sql="SELECT * FROM eventinfo INNER JOIN eventdetail ON eventinfo.eid=eventdetai
     if(mysqli_num_rows($query_run) > 0)
         {
             $event=mysqli_fetch_array($query_run);
-            // echo $event["name"];
             ?>
 <div class='event'>
     <form action="dbevent.php" method='POST' enctype='multipart/form-data'>
@@ -26,7 +25,7 @@ $sql="SELECT * FROM eventinfo INNER JOIN eventdetail ON eventinfo.eid=eventdetai
             </div>
             <?php 
             if(isset($_SESSION['error'])){
-            echo $_SESSION['error'];
+                echo "<span style='background-color:rgb(233, 90, 90);color:white;width: 300px;margin-top:10px;'>".$_SESSION['error']."</span>";
             }
 ?>
             <label for="name">Event Name</label>
@@ -48,14 +47,13 @@ $sql="SELECT * FROM eventinfo INNER JOIN eventdetail ON eventinfo.eid=eventdetai
             </div>
             <?php 
             if(isset($_SESSION['date'])){
-            echo $_SESSION['date'];
+                echo "<span style='background-color:rgb(233, 90, 90);color:white;width: 300px;margin-top:10px;'>".$_SESSION['date']."</span>";
             }
 ?>
             <label for="desc">Event Description</label>
             <div class="input-icon" style="width:450px;background-color:transparent;">
                 <textarea name="description" id="desc" cols="100" rows="20" required
                     placeholder="Enter Event Description"> <?php echo$event["description"]?></textarea>
-                <!-- <i class="fa-sharp fa-solid fa-file-word"></i> -->
             </div>
             <label for="orgname">Event Organizers</label>
             <div class="input-icon">

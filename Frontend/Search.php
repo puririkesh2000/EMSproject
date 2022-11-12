@@ -83,7 +83,6 @@ include 'Navbar.php';
     }
 
     }
-    // session_destroy();
 
     ?>
 </div>

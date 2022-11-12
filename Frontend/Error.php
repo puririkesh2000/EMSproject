@@ -3,7 +3,6 @@
  { 
      session_start(); 
   } 
-// include 'Navbar.php';
 ?>
 <html>
 
@@ -21,14 +20,14 @@
         </div>
         <div class="error-content">
 
-            
+
             <h3><?php
         if(isset( $_SESSION['msg'])){
             
             echo $_SESSION['msg'];
         } ?></h3>
-        <h1>ERROR!!!</h1>
-            <h3  class="error-h3">Please Signin</h3>
+            <h1>ERROR!!!</h1>
+            <h3 class="error-h3">Please Signin</h3>
 
         </div>
     </div>

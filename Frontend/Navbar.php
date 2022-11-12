@@ -6,8 +6,7 @@
     require 'dbuser.php';
     ?>
 <html>
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
 
 <head>
     <link rel="stylesheet" type="text/css" href="Navbar.css">
@@ -68,13 +67,11 @@
             <?php
                 echo "<p class='username'> <i class='fa-solid fa-user' style='margin-right:5px''></i>" . $_SESSION['userName']."</p>";
                 ?>
-            <!-- <a href="Home.php"> -->
 
             <form method="POST" style="">
                 <button name='logout' value="LOGOUT" class="navbar-log">LOGOUT<i
                         class="fa-solid fa-user-minus"></i></button>
             </form>
-            <!-- </a> -->
             <?php
             if(isset ($_POST['logout'])){
                 session_destroy();
@@ -121,7 +118,6 @@
             </div>
             <div class="popup-button">
                 <button name="signin" class="navbar-log">Sign In<i class="fa-solid fa-user"></i></button>
-                <!-- <span>Don't have an account?</span> -->
 
             </div>
         </form>

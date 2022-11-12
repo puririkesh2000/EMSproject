@@ -32,14 +32,14 @@ $image=$_FILES['image'];
     $filesize=$image['size'];
     $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
     if ($filesize> 200000) {
-        $_SESSION['error']= "Sorry, your file size exceeds 2MB.";
+        $_SESSION['error']= "!!! Sorry, your file size exceeds 2MB.";
         header("Location:Eventedit.php");
 
     }
     // Allow certain file formats
     elseif($imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "jpg" ) {
-        $_SESSION['error']= "Sorry, only JPG, JPEG & PNG  files are allowed.";
+        $_SESSION['error']= "!!! Sorry, only JPG, JPEG & PNG  files are allowed.";
         header("Location:Eventedit.php");
         
     }    
@@ -60,15 +60,11 @@ $image=$_FILES['image'];
 
     if (strtotime($date_now) > strtotime($date_convert)) {
         unset($_SESSION['error']); 
-                $_SESSION['date']="Invalid Date";
+                $_SESSION['date']="!!! Invalid Date";
                 header("Location:Eventedit.php?id=".$_SESSION['imp']."");
 
     }
-        // if (isset( $_SESSION['usertype'])){
-        //     header("Location:Eventedit.php?".$_SESSION['id']."");
-    //     }else{
-    //     header("Location:Myevent.php");}
-    // }
+
     else{
     $s="UPDATE eventdetail SET time='$time', capacity='$capacity' ,price='$price'  WHERE eid=$eid";
     
@@ -90,24 +86,20 @@ if($query_run){
 
 if(isset ($_POST['save'])){
     $image=$_FILES['image'];
-    // print_r($image);
     $filename=$image['name'];
-    // echo $filename;
     $fileerror=$image['error'];
     $filetmo=$image['tmp_name'];
     $filesize=$image['size'];
     $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
-    
-// echo $filesize;
-if ($filesize> 2000000) {
-        $_SESSION['rerror']= "Sorry, your file size exceeds 2MB.";
+    if ($filesize> 2000000) {
+        $_SESSION['rerror']= "!!! Sorry, your file size exceeds 2MB.";
         header("Location:Registerevent.php");
 
     }
     // Allow certain file formats
     elseif($imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "jpg" ) {
-        $_SESSION['rerror']= "Sorry, only JPG, JPEG & PNG  files are allowed.";
+        $_SESSION['rerror']= "!!! Sorry, only JPG, JPEG & PNG  files are allowed.";
         header("Location:Registerevent.php");
         
     }   
@@ -129,7 +121,7 @@ $date_convert = date_format(new DateTime($date), "m/d/Y");
 if (strtotime($date_now) > strtotime($date_convert)) {
     unset($_SESSION['error']); 
 
-    $_SESSION['rdate']="Invalid Date";
+    $_SESSION['rdate']="!!! Invalid Date";
 
     header("Location:Registerevent.php");
 }else{
@@ -150,10 +142,7 @@ if($query){
     $query_run=mysqli_query($con,$sql);
     header("Location:Home.php");
 }
-// if($query_run){
   
-// // header("Location:Home.php");
-// }
 else{
 header("Location:Registerevent.php");
 }

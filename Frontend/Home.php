@@ -4,9 +4,7 @@
        session_start(); 
     } 
     $date_now = date("m/d/Y");
-    // echo $date_now;
     $date_convert = date_format(new DateTime($date_now), "m/d/Y");
-// echo $date_convert;
     $_SESSION['eName'] = $date_now;
     unset($_SESSION['date']); 
     unset($_SESSION['rdate']); 
@@ -14,9 +12,9 @@
 
     if(isset( $_SESSION['last_login_timestamp'])){
 
-    // if((time() - $_SESSION['last_login_timestamp'])>60){
-    //     session_destroy();
-    //         } 
+    if((time() - $_SESSION['last_login_timestamp'])>1200){
+        session_destroy();
+            } 
     }
 
     if(isset( $_SESSION['success'])){
@@ -50,10 +48,7 @@ include 'Navbar.php';
 if(isset($_SESSION['id'])) {
     // echo  $_SESSION['id'];
 }
-// if(isset($_SESSION['userName'])) {
-// echo $_SESSION['userName'];
-// echo $_SESSION['last_login_timestamp'];
-// }
+
 ?>
     <!--Banner  -->
     <div class="Banner" onclick="sclosepopup(); closepopup()">

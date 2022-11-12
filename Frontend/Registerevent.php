@@ -6,7 +6,6 @@ if(!isset($_SESSION))
 } 
 include 'Navbar.php';
 
-// require 'Events.php';
 if(isset( $_SESSION['userName'])){
 
     if(isset( $_SESSION['last_login_timestamp'])){
@@ -35,7 +34,7 @@ if(isset( $_SESSION['userName'])){
             </div>
             <?php 
             if(isset($_SESSION['rerror'])){
-            echo $_SESSION['rerror'];
+                echo "<span style='background-color:rgb(233, 90, 90);color:white;width: 300px;margin-top:10px;'>".$_SESSION['rerror']."</span>";
             }
 ?>
             <label for="name">Event Name</label>
@@ -55,14 +54,15 @@ if(isset( $_SESSION['userName'])){
             </div>
             <?php 
             if(isset($_SESSION['rdate'])){
-            echo $_SESSION['rdate'];
+            echo "<span style='background-color:rgb(233, 90, 90);color:white;width: 300px;margin-top:10px;'>".$_SESSION['rdate']."</span>
+            " ;
             }
+            
 ?>
             <label for="desc">Event Description</label>
             <div class="input-icon" style="width:450px;background-color:transparent;">
                 <textarea name="description" id="desc" cols="100" rows="20" required
                     placeholder="Enter Event Description"></textarea>
-                <!-- <i class="fa-sharp fa-solid fa-file-word"></i> -->
             </div>
             <label for="orgname">Event Organizers</label>
             <div class="input-icon">
@@ -97,9 +97,7 @@ if(isset( $_SESSION['userName'])){
     <?php
     }
     else{
-        // echo "You need to login to register";
     include 'Error.php';
-    // header ('Refresh: 3; url=Footer.php');
 }
 ?>
 </div>

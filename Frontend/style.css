@@ -38,12 +38,9 @@ background-color: rgb(255, 255, 255);
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* position: absolute; */
-    /* bottom: 0px; */
-    /* right: 105px; */
+
     margin: -110px 110px ;
-/* z-index: 999 ; */
-/* width: 85%; */
+
 }
 
 .Content_Boxarea{
@@ -80,5 +77,5 @@ background-color: rgb(255, 255, 255);
 }
 .right-boxarea{
     margin-left: 30px;
-    /* width: 50%; */
+
 }

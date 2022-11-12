@@ -16,9 +16,6 @@
         array("../Images/blog3.png","Theres something special about an event that you or your friend organized.Firstofall you need tosign in to register an event and fill up the given forms.", "How to post an event?" ,"By Sanij Maharjan 191438 ")
     );
     for ($i=0;$i<3;$i++){
-        // for($row = 0; $row <3 ; $row++) {
-            //     for ($col = 0; $col < 3; $col++) {
-                
                 ?>
 
         <div class="blog-card">

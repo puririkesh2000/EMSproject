@@ -5,12 +5,10 @@
 }
 .event{
 display: flex;
-/* justify-content: center; */
-/* align-items: center; */
+
 flex-direction: column;
 background-image: url("../Images/2.png");
-/* height: 600px;
-width: 100%; */
+
 background-repeat: no-repeat;
 background-position:right;
 
@@ -20,8 +18,7 @@ margin-left: 250px;
 .Registerevent{
 
     display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
+
     flex-direction: column;
 
 }
@@ -46,7 +43,6 @@ h2{
     background-color: transparent;
     border-radius: 50px;
     padding: 6px 10px;
-    /* height: 35.6; */
 }
 ::-webkit-file-upload-button:hover{
     cursor: pointer;
